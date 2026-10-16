@@ -7,18 +7,19 @@ usage() {
   cat <<EOF
 Usage: $SCRIPT_NAME [RAWDIR] [GENOME_FASTA] [WORKDIR] [prefix] [suffix]
 
-RAWDIR  - папка с fastq; ищем пары по:
-         **/*_R1.f*q*  и  **/*_1.f*q*
+RAWDIR  - directory containing FASTQ files; searches for pairs matching:
+         **/*_R1.f*q*  and  **/*_1.f*q*
 
-GENOME_FASTA - путь к FASTA для bwa mem (нужен индекс: bwa index genome.fa)
+GENOME_FASTA - path to a FASTA file for bwa mem
+               (an index is required: bwa index genome.fa)
 
-WORKDIR - куда складывать результаты/временные файлы (по умолчанию \$PWD)
+WORKDIR - where to store results/temporary files (default: \$PWD)
 
-prefix - префикс (в имени без расширения), который надо отрезать, если совпал
-suffix - суффикс (в имени без расширения), который надо отрезать, если совпал
+prefix - prefix (in the filename without extension) to remove if it matches
+suffix - suffix (in the filename without extension) to remove if it matches
 
-Опции:
-  -h, --help    Показать справку и выйти.
+Options:
+  -h, --help    Show this help message and exit.
 EOF
 }
 
@@ -28,13 +29,13 @@ if [[ "${1-}" == "-h" || "${1-}" == "--help" ]]; then
 fi
 
 if (( $# < 2 )); then
-  echo "ERROR: нужно минимум 2 аргумента: RAWDIR и GENOME_FASTA" >&2
+  echo "ERROR: at least 2 arguments are required: RAWDIR and GENOME_FASTA" >&2
   usage >&2
   exit 1
 fi
 
 if (( $# > 5 )); then
-  echo "ERROR: слишком много аргументов (max 5)" >&2
+  echo "ERROR: too many arguments (max 5)" >&2
   usage >&2
   exit 1
 fi
@@ -51,11 +52,11 @@ WORKDIR="$(realpath "$WORKDIR")"
 prefix="${4-}"
 suffix="${5-}"
 
-cd "$WORKDIR" || { echo "Не удалось перейти в директорию: $WORKDIR" >&2; exit 1; }
+cd "$WORKDIR" || { echo "Failed to change directory: $WORKDIR" >&2; exit 1; }
 
 mkdir -p -- "$WORKDIR/BAMs" "$WORKDIR/QC" "$WORKDIR/logs"
 
-# Оригинальный stdout в терминал
+# Original stdout, sent to the terminal
 exec 3>&1
 
 RUN_TS="$(date +%F_%H-%M-%S)"
@@ -65,10 +66,10 @@ mkdir -p -- "$LOGDIR" "$QCDIR"
 
 MASTER_LOG="$LOGDIR/${SCRIPT_NAME}.log"
 
-# Всё (stdout+stderr) в общий лог запуска
+# Send all output (stdout + stderr) to the master run log
 exec >"$MASTER_LOG" 2>&1
 
-echo "Рабочая папка: $WORKDIR" >&3
+echo "Working directory: $WORKDIR" >&3
 echo "LOGDIR: $LOGDIR" >&3
 echo "MASTER LOG: $MASTER_LOG" >&3
 echo "QCDIR: $QCDIR" >&3
@@ -79,7 +80,7 @@ cd "$TEMPDIR"
 
 shopt -s nullglob globstar
 
-# чтобы не обработать один и тот же файл дважды, если маски пересекутся
+# Avoid processing the same file twice if the glob patterns overlap
 declare -A seen_R1=()
 
 n_found=0
@@ -127,7 +128,7 @@ run_sample() {
   elif [[ -f "${bam%.bam}.bai" ]]; then
     bai="${bam%.bam}.bai"
   else
-    echo "ERROR: не найден bai для $bam" >&2
+    echo "ERROR: no .bai index found for $bam" >&2
     exit 1
   fi
 
@@ -140,7 +141,7 @@ run_sample() {
 }
 
 for R1 in "$RAWDIR"/**/*_R1*.f*q* "$RAWDIR"/**/*_1*.f*q*; do
-  # уникальность по realpath
+  # Ensure uniqueness by realpath
   R1_real="$(realpath "$R1" 2>/dev/null || true)"
   [[ -n "$R1_real" ]] || continue
   [[ -n "${seen_R1[$R1_real]-}" ]] && continue
@@ -153,14 +154,14 @@ for R1 in "$RAWDIR"/**/*_R1*.f*q* "$RAWDIR"/**/*_1*.f*q*; do
 
   ext="$(detect_ext "$base")"
   if [[ -z "$ext" ]]; then
-    echo "SKIP: не понимаю расширение: $base" >&2
+    echo "SKIP: unrecognized file extension: $base" >&2
     ((++n_skipped))
     continue
   fi
 
   stem="${base%$ext}"
 
-  # Находим R2 и sample_stem
+  # Find R2 and the sample stem
   if [[ "$stem" == *"_R1"* ]]; then
     R2_stem="${stem/_R1/_R2}"
     sample_stem="${stem%%_R1*}"
@@ -177,15 +178,15 @@ for R1 in "$RAWDIR"/**/*_R1*.f*q* "$RAWDIR"/**/*_1*.f*q*; do
 
   R2="$dir/$R2_stem$ext"
   if [[ ! -f "$R2" ]]; then
-    echo "ERROR: нет пары для $R1 (ожидался $R2)" >&2
+    echo "ERROR: no mate found for $R1 (expected $R2)" >&2
     exit 1
   fi
 
-  # Применяем prefix/suffix к имени без расширения
+  # Apply prefix/suffix to the filename without extension
   sample_id="$sample_stem"
 
   if [[ -n "$prefix" && "$sample_id" != "$prefix"* ]]; then
-    echo "SKIP: prefix не совпал для '$sample_id' (ожидался '$prefix...')" >&2
+    echo "SKIP: prefix does not match for '$sample_id' (expected '$prefix...')" >&2
     ((++n_skipped))
     continue
   fi
@@ -194,7 +195,7 @@ for R1 in "$RAWDIR"/**/*_R1*.f*q* "$RAWDIR"/**/*_1*.f*q*; do
   fi
 
   if [[ -n "$suffix" && "$sample_id" != *"$suffix" ]]; then
-    echo "SKIP: suffix не совпал для '$sample_id' (ожидался '...$suffix')" >&2
+    echo "SKIP: suffix does not match for '$sample_id' (expected '...$suffix')" >&2
     ((++n_skipped))
     continue
   fi
@@ -202,13 +203,15 @@ for R1 in "$RAWDIR"/**/*_R1*.f*q* "$RAWDIR"/**/*_1*.f*q*; do
     sample_id="${sample_id%"$suffix"}"
   fi
 
-  # Лог на сэмпл: вывод дублируется и в общий лог (stdout), и в sample log
+  # Per-sample log: output is duplicated both in the master log (stdout)
+  # and in the sample log
   sample_log="$LOGDIR/${sample_id}.log"
 
   echo "Processing sample: $sample_id" >&3
   echo "Sample log: $sample_log" >&3
 
-  # ВАЖНО: tee пишет в sample log, а дальше поток идёт в общий лог (т.к. stdout уже туда)
+  # IMPORTANT: tee writes to the sample log, then the stream continues
+  # into the master log (because stdout is already redirected there)
   {
     run_sample "$sample_id" "$R1" "$R2"
   } 2>&1 | tee -a "$sample_log"
@@ -216,7 +219,7 @@ for R1 in "$RAWDIR"/**/*_R1*.f*q* "$RAWDIR"/**/*_1*.f*q*; do
   ((++n_processed))
 done
 
-# Итоги
+# Summary
 echo "----- SUMMARY -----" >&3
 echo "Found R1: $n_found" >&3
 echo "Processed: $n_processed" >&3
@@ -224,11 +227,11 @@ echo "Skipped: $n_skipped" >&3
 echo "Master log: $MASTER_LOG" >&3
 
 if (( n_found == 0 )); then
-  echo "ERROR: в каталоге '$RAWDIR' не найдено ни одного R1 файла" >&2
+  echo "ERROR: no R1 files found in directory '$RAWDIR'" >&2
   exit 1
 fi
 
 if (( n_processed == 0 )); then
-  echo "ERROR: не обработано ни одного sample (все пропущены из-за prefix/suffix или ошибок формата)" >&2
+  echo "ERROR: no samples were processed (all were skipped due to prefix/suffix filters or format errors)" >&2
   exit 1
 fi
