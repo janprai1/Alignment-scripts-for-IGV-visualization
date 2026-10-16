@@ -1,2 +1,2 @@
 # Alignment-scripts-for-IGV-visualizing
-fastq files as input
+fastq (reads) and fasta (references) files as input
