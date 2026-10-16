@@ -1,0 +1,535 @@
+========== Processing sample: pDr-1-NOTCH1_S104_L001 ==========
+ R1: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-1-NOTCH1_S104_L001_R1_001.fastq.gz
+ R2: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-1-NOTCH1_S104_L001_R2_001.fastq.gz
+[pDr-1-NOTCH1_S104_L001] Running fastp...
+Read1 before filtering:
+total reads: 91
+total bases: 13741
+Q20 bases: 13368(97.2855%)
+Q30 bases: 13249(96.4195%)
+Q40 bases: 24(0.17466%)
+
+Read2 before filtering:
+total reads: 91
+total bases: 13741
+Q20 bases: 12889(93.7996%)
+Q30 bases: 12618(91.8274%)
+Q40 bases: 38(0.276545%)
+
+Read1 after filtering:
+total reads: 91
+total bases: 10275
+Q20 bases: 10194(99.2117%)
+Q30 bases: 10165(98.9294%)
+Q40 bases: 24(0.233577%)
+
+Read2 after filtering:
+total reads: 91
+total bases: 10275
+Q20 bases: 10165(98.9294%)
+Q30 bases: 10122(98.5109%)
+Q40 bases: 35(0.340633%)
+
+Filtering result:
+reads passed filter: 182
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 0
+reads with adapter trimmed: 126
+bases trimmed due to adapters: 6932
+
+Duplication rate: 0%
+
+Insert size peak (evaluated by paired-end reads): 106
+
+JSON report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-1-NOTCH1_S104_L001.fastp_report.json
+HTML report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-1-NOTCH1_S104_L001.fastp_report.html
+
+fastp -i /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-1-NOTCH1_S104_L001_R1_001.fastq.gz -I /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-1-NOTCH1_S104_L001_R2_001.fastq.gz -o pDr-1-NOTCH1_S104_L001.out.R1.fq.gz -O pDr-1-NOTCH1_S104_L001.out.R2.fq.gz --html /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-1-NOTCH1_S104_L001.fastp_report.html --json /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-1-NOTCH1_S104_L001.fastp_report.json 
+fastp v1.0.1, time used: 0 seconds
+[pDr-1-NOTCH1_S104_L001] Running BWA-MEM...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 182 sequences (20550 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 0, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] skip orientation FR as there are not enough pairs
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 182 reads in 0.006 CPU sec, 0.001 real sec
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa mem -t 8 /data/jvraitsina/PLASMIDS_SEQ/refs/ikzfnotchproject/f1r4-notch1.fa pDr-1-NOTCH1_S104_L001.out.R1.fq.gz pDr-1-NOTCH1_S104_L001.out.R2.fq.gz
+[main] Real time: 0.002 sec; CPU: 0.008 sec
+[pDr-1-NOTCH1_S104_L001] Indexing BAM...
+[pDr-1-NOTCH1_S104_L001] Cleaning up...
+Finished sample: pDr-1-NOTCH1_S104_L001
+========== Processing sample: pDr-2-NOTCH1_S105_L001 ==========
+ R1: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-2-NOTCH1_S105_L001_R1_001.fastq.gz
+ R2: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-2-NOTCH1_S105_L001_R2_001.fastq.gz
+[pDr-2-NOTCH1_S105_L001] Running fastp...
+Read1 before filtering:
+total reads: 5599
+total bases: 845449
+Q20 bases: 790987(93.5582%)
+Q30 bases: 775121(91.6816%)
+Q40 bases: 1093(0.12928%)
+
+Read2 before filtering:
+total reads: 5599
+total bases: 845449
+Q20 bases: 731025(86.4659%)
+Q30 bases: 703489(83.2089%)
+Q40 bases: 718(0.0849253%)
+
+Read1 after filtering:
+total reads: 5591
+total bases: 499883
+Q20 bases: 491371(98.2972%)
+Q30 bases: 489168(97.8565%)
+Q40 bases: 643(0.12863%)
+
+Read2 after filtering:
+total reads: 5591
+total bases: 499883
+Q20 bases: 484959(97.0145%)
+Q30 bases: 481053(96.2331%)
+Q40 bases: 385(0.077018%)
+
+Filtering result:
+reads passed filter: 11182
+reads failed due to low quality: 16
+reads failed due to too many N: 0
+reads failed due to too short: 0
+reads with adapter trimmed: 9584
+bases trimmed due to adapters: 688716
+
+Duplication rate: 0.464369%
+
+Insert size peak (evaluated by paired-end reads): 73
+
+JSON report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-2-NOTCH1_S105_L001.fastp_report.json
+HTML report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-2-NOTCH1_S105_L001.fastp_report.html
+
+fastp -i /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-2-NOTCH1_S105_L001_R1_001.fastq.gz -I /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-2-NOTCH1_S105_L001_R2_001.fastq.gz -o pDr-2-NOTCH1_S105_L001.out.R1.fq.gz -O pDr-2-NOTCH1_S105_L001.out.R2.fq.gz --html /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-2-NOTCH1_S105_L001.fastp_report.html --json /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-2-NOTCH1_S105_L001.fastp_report.json 
+fastp v1.0.1, time used: 0 seconds
+[pDr-2-NOTCH1_S105_L001] Running BWA-MEM...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 11182 sequences (999766 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 1, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] skip orientation FR as there are not enough pairs
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 11182 reads in 0.176 CPU sec, 0.023 real sec
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa mem -t 8 /data/jvraitsina/PLASMIDS_SEQ/refs/ikzfnotchproject/f1r4-notch1.fa pDr-2-NOTCH1_S105_L001.out.R1.fq.gz pDr-2-NOTCH1_S105_L001.out.R2.fq.gz
+[main] Real time: 0.037 sec; CPU: 0.191 sec
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+[pDr-2-NOTCH1_S105_L001] Indexing BAM...
+[pDr-2-NOTCH1_S105_L001] Cleaning up...
+Finished sample: pDr-2-NOTCH1_S105_L001
+========== Processing sample: pDr-3-NOTCH1_S106_L001 ==========
+ R1: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-3-NOTCH1_S106_L001_R1_001.fastq.gz
+ R2: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-3-NOTCH1_S106_L001_R2_001.fastq.gz
+[pDr-3-NOTCH1_S106_L001] Running fastp...
+Read1 before filtering:
+total reads: 12826
+total bases: 1936726
+Q20 bases: 1830960(94.5389%)
+Q30 bases: 1797594(92.8161%)
+Q40 bases: 3180(0.164195%)
+
+Read2 before filtering:
+total reads: 12826
+total bases: 1936726
+Q20 bases: 1716593(88.6338%)
+Q30 bases: 1657783(85.5972%)
+Q40 bases: 2245(0.115917%)
+
+Read1 after filtering:
+total reads: 12815
+total bases: 1195296
+Q20 bases: 1177954(98.5491%)
+Q30 bases: 1173006(98.1352%)
+Q40 bases: 2111(0.176609%)
+
+Read2 after filtering:
+total reads: 12815
+total bases: 1195296
+Q20 bases: 1166247(97.5697%)
+Q30 bases: 1158441(96.9167%)
+Q40 bases: 1352(0.11311%)
+
+Filtering result:
+reads passed filter: 25630
+reads failed due to low quality: 20
+reads failed due to too many N: 2
+reads failed due to too short: 0
+reads with adapter trimmed: 21314
+bases trimmed due to adapters: 1479538
+
+Duplication rate: 0.592546%
+
+Insert size peak (evaluated by paired-end reads): 54
+
+JSON report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-3-NOTCH1_S106_L001.fastp_report.json
+HTML report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-3-NOTCH1_S106_L001.fastp_report.html
+
+fastp -i /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-3-NOTCH1_S106_L001_R1_001.fastq.gz -I /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-3-NOTCH1_S106_L001_R2_001.fastq.gz -o pDr-3-NOTCH1_S106_L001.out.R1.fq.gz -O pDr-3-NOTCH1_S106_L001.out.R2.fq.gz --html /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-3-NOTCH1_S106_L001.fastp_report.html --json /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-3-NOTCH1_S106_L001.fastp_report.json 
+fastp v1.0.1, time used: 1 seconds
+[pDr-3-NOTCH1_S106_L001] Running BWA-MEM...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 25630 sequences (2390592 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 4, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] skip orientation FR as there are not enough pairs
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 25630 reads in 0.432 CPU sec, 0.055 real sec
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa mem -t 8 /data/jvraitsina/PLASMIDS_SEQ/refs/ikzfnotchproject/f1r4-notch1.fa pDr-3-NOTCH1_S106_L001.out.R1.fq.gz pDr-3-NOTCH1_S106_L001.out.R2.fq.gz
+[main] Real time: 0.087 sec; CPU: 0.465 sec
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+[pDr-3-NOTCH1_S106_L001] Indexing BAM...
+[pDr-3-NOTCH1_S106_L001] Cleaning up...
+Finished sample: pDr-3-NOTCH1_S106_L001
+========== Processing sample: pDr-4-NOTCH1_S107_L001 ==========
+ R1: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-4-NOTCH1_S107_L001_R1_001.fastq.gz
+ R2: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-4-NOTCH1_S107_L001_R2_001.fastq.gz
+[pDr-4-NOTCH1_S107_L001] Running fastp...
+Read1 before filtering:
+total reads: 13598
+total bases: 2053298
+Q20 bases: 1929967(93.9935%)
+Q30 bases: 1886689(91.8858%)
+Q40 bases: 576(0.0280524%)
+
+Read2 before filtering:
+total reads: 13598
+total bases: 2053298
+Q20 bases: 1819792(88.6278%)
+Q30 bases: 1744312(84.9517%)
+Q40 bases: 406(0.0197731%)
+
+Read1 after filtering:
+total reads: 13516
+total bases: 1418492
+Q20 bases: 1377892(97.1378%)
+Q30 bases: 1362716(96.0679%)
+Q40 bases: 362(0.0255201%)
+
+Read2 after filtering:
+total reads: 13516
+total bases: 1418492
+Q20 bases: 1356949(95.6614%)
+Q30 bases: 1334202(94.0578%)
+Q40 bases: 206(0.0145225%)
+
+Filtering result:
+reads passed filter: 27032
+reads failed due to low quality: 164
+reads failed due to too many N: 0
+reads failed due to too short: 0
+reads with adapter trimmed: 18952
+bases trimmed due to adapters: 1245200
+
+Duplication rate: 0.360347%
+
+Insert size peak (evaluated by paired-end reads): 52
+
+JSON report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-4-NOTCH1_S107_L001.fastp_report.json
+HTML report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-4-NOTCH1_S107_L001.fastp_report.html
+
+fastp -i /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-4-NOTCH1_S107_L001_R1_001.fastq.gz -I /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-4-NOTCH1_S107_L001_R2_001.fastq.gz -o pDr-4-NOTCH1_S107_L001.out.R1.fq.gz -O pDr-4-NOTCH1_S107_L001.out.R2.fq.gz --html /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-4-NOTCH1_S107_L001.fastp_report.html --json /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-4-NOTCH1_S107_L001.fastp_report.json 
+fastp v1.0.1, time used: 1 seconds
+[pDr-4-NOTCH1_S107_L001] Running BWA-MEM...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 27032 sequences (2836984 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4, 10049, 1, 4)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (66, 102, 163)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 357)
+[M::mem_pestat] mean and std.dev: (118.49, 70.36)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 454)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 27032 reads in 0.437 CPU sec, 0.056 real sec
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa mem -t 8 /data/jvraitsina/PLASMIDS_SEQ/refs/ikzfnotchproject/f1r4-notch1.fa pDr-4-NOTCH1_S107_L001.out.R1.fq.gz pDr-4-NOTCH1_S107_L001.out.R2.fq.gz
+[main] Real time: 0.095 sec; CPU: 0.477 sec
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+[pDr-4-NOTCH1_S107_L001] Indexing BAM...
+[pDr-4-NOTCH1_S107_L001] Cleaning up...
+Finished sample: pDr-4-NOTCH1_S107_L001
+========== Processing sample: pDr-5-NOTCH1_S108_L001 ==========
+ R1: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-5-NOTCH1_S108_L001_R1_001.fastq.gz
+ R2: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-5-NOTCH1_S108_L001_R2_001.fastq.gz
+[pDr-5-NOTCH1_S108_L001] Running fastp...
+Read1 before filtering:
+total reads: 17379
+total bases: 2624229
+Q20 bases: 2464394(93.9093%)
+Q30 bases: 2407219(91.7305%)
+Q40 bases: 573(0.021835%)
+
+Read2 before filtering:
+total reads: 17379
+total bases: 2624229
+Q20 bases: 2324423(88.5755%)
+Q30 bases: 2227259(84.8729%)
+Q40 bases: 400(0.0152426%)
+
+Read1 after filtering:
+total reads: 17265
+total bases: 1783857
+Q20 bases: 1733766(97.192%)
+Q30 bases: 1715147(96.1482%)
+Q40 bases: 410(0.0229839%)
+
+Read2 after filtering:
+total reads: 17265
+total bases: 1783857
+Q20 bases: 1711026(95.9172%)
+Q30 bases: 1684227(94.4149%)
+Q40 bases: 233(0.0130616%)
+
+Filtering result:
+reads passed filter: 34530
+reads failed due to low quality: 228
+reads failed due to too many N: 0
+reads failed due to too short: 0
+reads with adapter trimmed: 24822
+bases trimmed due to adapters: 1646732
+
+Duplication rate: 0.477588%
+
+Insert size peak (evaluated by paired-end reads): 55
+
+JSON report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-5-NOTCH1_S108_L001.fastp_report.json
+HTML report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-5-NOTCH1_S108_L001.fastp_report.html
+
+fastp -i /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-5-NOTCH1_S108_L001_R1_001.fastq.gz -I /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-5-NOTCH1_S108_L001_R2_001.fastq.gz -o pDr-5-NOTCH1_S108_L001.out.R1.fq.gz -O pDr-5-NOTCH1_S108_L001.out.R2.fq.gz --html /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-5-NOTCH1_S108_L001.fastp_report.html --json /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-5-NOTCH1_S108_L001.fastp_report.json 
+fastp v1.0.1, time used: 1 seconds
+[pDr-5-NOTCH1_S108_L001] Running BWA-MEM...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 34530 sequences (3567714 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6, 13213, 0, 6)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (66, 100, 158)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 342)
+[M::mem_pestat] mean and std.dev: (115.23, 66.43)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 434)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 34530 reads in 0.544 CPU sec, 0.070 real sec
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa mem -t 8 /data/jvraitsina/PLASMIDS_SEQ/refs/ikzfnotchproject/f1r4-notch1.fa pDr-5-NOTCH1_S108_L001.out.R1.fq.gz pDr-5-NOTCH1_S108_L001.out.R2.fq.gz
+[main] Real time: 0.119 sec; CPU: 0.594 sec
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+[pDr-5-NOTCH1_S108_L001] Indexing BAM...
+[pDr-5-NOTCH1_S108_L001] Cleaning up...
+Finished sample: pDr-5-NOTCH1_S108_L001
+========== Processing sample: pDr-6-NOTCH1_S109_L001 ==========
+ R1: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-6-NOTCH1_S109_L001_R1_001.fastq.gz
+ R2: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-6-NOTCH1_S109_L001_R2_001.fastq.gz
+[pDr-6-NOTCH1_S109_L001] Running fastp...
+Read1 before filtering:
+total reads: 11589
+total bases: 1749939
+Q20 bases: 1645666(94.0413%)
+Q30 bases: 1608424(91.9131%)
+Q40 bases: 360(0.0205721%)
+
+Read2 before filtering:
+total reads: 11589
+total bases: 1749939
+Q20 bases: 1546373(88.3673%)
+Q30 bases: 1479887(84.5679%)
+Q40 bases: 276(0.015772%)
+
+Read1 after filtering:
+total reads: 11504
+total bases: 1230829
+Q20 bases: 1193624(96.9772%)
+Q30 bases: 1179696(95.8456%)
+Q40 bases: 227(0.0184429%)
+
+Read2 after filtering:
+total reads: 11504
+total bases: 1230829
+Q20 bases: 1167747(94.8748%)
+Q30 bases: 1145212(93.044%)
+Q40 bases: 180(0.0146243%)
+
+Filtering result:
+reads passed filter: 23008
+reads failed due to low quality: 170
+reads failed due to too many N: 0
+reads failed due to too short: 0
+reads with adapter trimmed: 15640
+bases trimmed due to adapters: 1013006
+
+Duplication rate: 0.293382%
+
+Insert size peak (evaluated by paired-end reads): 54
+
+JSON report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-6-NOTCH1_S109_L001.fastp_report.json
+HTML report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-6-NOTCH1_S109_L001.fastp_report.html
+
+fastp -i /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-6-NOTCH1_S109_L001_R1_001.fastq.gz -I /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-6-NOTCH1_S109_L001_R2_001.fastq.gz -o pDr-6-NOTCH1_S109_L001.out.R1.fq.gz -O pDr-6-NOTCH1_S109_L001.out.R2.fq.gz --html /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-6-NOTCH1_S109_L001.fastp_report.html --json /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-6-NOTCH1_S109_L001.fastp_report.json 
+fastp v1.0.1, time used: 1 seconds
+[pDr-6-NOTCH1_S109_L001] Running BWA-MEM...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 23008 sequences (2461658 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (3, 8881, 1, 5)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (69, 107, 170)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 372)
+[M::mem_pestat] mean and std.dev: (124.50, 74.15)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 473)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 23008 reads in 0.380 CPU sec, 0.049 real sec
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa mem -t 8 /data/jvraitsina/PLASMIDS_SEQ/refs/ikzfnotchproject/f1r4-notch1.fa pDr-6-NOTCH1_S109_L001.out.R1.fq.gz pDr-6-NOTCH1_S109_L001.out.R2.fq.gz
+[main] Real time: 0.083 sec; CPU: 0.415 sec
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+[pDr-6-NOTCH1_S109_L001] Indexing BAM...
+[pDr-6-NOTCH1_S109_L001] Cleaning up...
+Finished sample: pDr-6-NOTCH1_S109_L001
+========== Processing sample: pDr-7-NOTCH1_S110_L001 ==========
+ R1: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-7-NOTCH1_S110_L001_R1_001.fastq.gz
+ R2: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-7-NOTCH1_S110_L001_R2_001.fastq.gz
+[pDr-7-NOTCH1_S110_L001] Running fastp...
+Read1 before filtering:
+total reads: 18810
+total bases: 2840310
+Q20 bases: 2694069(94.8512%)
+Q30 bases: 2648132(93.2339%)
+Q40 bases: 2341(0.0824206%)
+
+Read2 before filtering:
+total reads: 18810
+total bases: 2840310
+Q20 bases: 2550371(89.792%)
+Q30 bases: 2469189(86.9338%)
+Q40 bases: 1928(0.0678799%)
+
+Read1 after filtering:
+total reads: 18748
+total bases: 1892792
+Q20 bases: 1858881(98.2084%)
+Q30 bases: 1848138(97.6408%)
+Q40 bases: 1524(0.080516%)
+
+Read2 after filtering:
+total reads: 18748
+total bases: 1892792
+Q20 bases: 1843038(97.3714%)
+Q30 bases: 1827972(96.5754%)
+Q40 bases: 1152(0.0608625%)
+
+Filtering result:
+reads passed filter: 37496
+reads failed due to low quality: 124
+reads failed due to too many N: 0
+reads failed due to too short: 0
+reads with adapter trimmed: 27634
+bases trimmed due to adapters: 1876462
+
+Duplication rate: 0.994152%
+
+Insert size peak (evaluated by paired-end reads): 65
+
+JSON report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-7-NOTCH1_S110_L001.fastp_report.json
+HTML report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-7-NOTCH1_S110_L001.fastp_report.html
+
+fastp -i /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-7-NOTCH1_S110_L001_R1_001.fastq.gz -I /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-7-NOTCH1_S110_L001_R2_001.fastq.gz -o pDr-7-NOTCH1_S110_L001.out.R1.fq.gz -O pDr-7-NOTCH1_S110_L001.out.R2.fq.gz --html /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-7-NOTCH1_S110_L001.fastp_report.html --json /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-7-NOTCH1_S110_L001.fastp_report.json 
+fastp v1.0.1, time used: 0 seconds
+[pDr-7-NOTCH1_S110_L001] Running BWA-MEM...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 37496 sequences (3785584 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 1, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] skip orientation FR as there are not enough pairs
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 37496 reads in 0.663 CPU sec, 0.084 real sec
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa mem -t 8 /data/jvraitsina/PLASMIDS_SEQ/refs/ikzfnotchproject/f1r4-notch1.fa pDr-7-NOTCH1_S110_L001.out.R1.fq.gz pDr-7-NOTCH1_S110_L001.out.R2.fq.gz
+[main] Real time: 0.133 sec; CPU: 0.713 sec
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+[pDr-7-NOTCH1_S110_L001] Indexing BAM...
+[pDr-7-NOTCH1_S110_L001] Cleaning up...
+Finished sample: pDr-7-NOTCH1_S110_L001
+========== Processing sample: pDr-8-NOTCH1_S111_L001 ==========
+ R1: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-8-NOTCH1_S111_L001_R1_001.fastq.gz
+ R2: /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-8-NOTCH1_S111_L001_R2_001.fastq.gz
+[pDr-8-NOTCH1_S111_L001] Running fastp...
+Read1 before filtering:
+total reads: 7330
+total bases: 1106830
+Q20 bases: 1040806(94.0349%)
+Q30 bases: 1017186(91.9008%)
+Q40 bases: 251(0.0226774%)
+
+Read2 before filtering:
+total reads: 7330
+total bases: 1106830
+Q20 bases: 977260(88.2936%)
+Q30 bases: 935813(84.5489%)
+Q40 bases: 140(0.0126487%)
+
+Read1 after filtering:
+total reads: 7262
+total bases: 766292
+Q20 bases: 745380(97.271%)
+Q30 bases: 737599(96.2556%)
+Q40 bases: 163(0.0212713%)
+
+Read2 after filtering:
+total reads: 7262
+total bases: 766292
+Q20 bases: 729549(95.2051%)
+Q30 bases: 716440(93.4944%)
+Q40 bases: 82(0.0107009%)
+
+Filtering result:
+reads passed filter: 14524
+reads failed due to low quality: 134
+reads failed due to too many N: 2
+reads failed due to too short: 0
+reads with adapter trimmed: 10222
+bases trimmed due to adapters: 661124
+
+Duplication rate: 0.218281%
+
+Insert size peak (evaluated by paired-end reads): 55
+
+JSON report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-8-NOTCH1_S111_L001.fastp_report.json
+HTML report: /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-8-NOTCH1_S111_L001.fastp_report.html
+
+fastp -i /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-8-NOTCH1_S111_L001_R1_001.fastq.gz -I /data/jvraitsina/PLASMIDS_SEQ/RAW/pDrNOTCH1/pDr-8-NOTCH1_S111_L001_R2_001.fastq.gz -o pDr-8-NOTCH1_S111_L001.out.R1.fq.gz -O pDr-8-NOTCH1_S111_L001.out.R2.fq.gz --html /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-8-NOTCH1_S111_L001.fastp_report.html --json /data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-10-15/pDr_NOTCH1/QC/2026-10-15_14-56-37/pDr-8-NOTCH1_S111_L001.fastp_report.json 
+fastp v1.0.1, time used: 0 seconds
+[pDr-8-NOTCH1_S111_L001] Running BWA-MEM...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 14524 sequences (1532584 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (3, 5355, 0, 1)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (68, 104, 163)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 353)
+[M::mem_pestat] mean and std.dev: (119.53, 69.79)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 448)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 14524 reads in 0.242 CPU sec, 0.031 real sec
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa mem -t 8 /data/jvraitsina/PLASMIDS_SEQ/refs/ikzfnotchproject/f1r4-notch1.fa pDr-8-NOTCH1_S111_L001.out.R1.fq.gz pDr-8-NOTCH1_S111_L001.out.R2.fq.gz
+[main] Real time: 0.053 sec; CPU: 0.264 sec
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+[pDr-8-NOTCH1_S111_L001] Indexing BAM...
+[pDr-8-NOTCH1_S111_L001] Cleaning up...
+Finished sample: pDr-8-NOTCH1_S111_L001
