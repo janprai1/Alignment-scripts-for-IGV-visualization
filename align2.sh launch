@@ -1,0 +1,10 @@
+#запуск скрипта align2.sh: 
+-> юзает прочтения (такая-то директория)
+-> выравнивает на референсную последовательночть (такая-то директория)
+-> результаты выравнивания в такую-то директорию
+
+
+/data/jvraitsina/PLASMIDS_SEQ/align2.sh \
+  "/data/jvraitsina/PLASMIDS_SEQ/RAW/717s+IKZF2(3-6)-NICD(28-34)" \
+  "/data/jvraitsina/PLASMIDS_SEQ/refs/ikzfnotchproject/717+ssodn_REAL+IKZF2_3-6-NICD_28-34.fa" \
+  "/data/jvraitsina/PLASMIDS_SEQ/ALIGNMENTS/2026-17-10/717s+IKZF2(3-6)-NICD(28-34)"
