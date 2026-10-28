@@ -1,3 +1,8 @@
+#запуск скрипта refresh_refs_recurse.sh:
+-> индексация новых референсных последовательностей при наличии по такой-то директории
+/data/jvraitsina/PLASMIDS_SEQ/refresh_refs_recurse.sh \
+  "/data/jvraitsina/PLASMIDS_SEQ/refs/ikzfnotchproject"
+
 #запуск скрипта align2.sh: 
 -> юзает прочтения (такая-то директория)
 -> выравнивает на референсную последовательночть (такая-то директория)
